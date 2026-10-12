@@ -3,13 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header>
+      <div class="leftside">
+        <img src="assets/icons/SVG.svg" alt="logo" />
+        <form class="search-bar">
+          <input type="text" name="" id="" placeholder="Search events" />
+          <input type="text" name="" id="" placeholder="Mountain View, CA" />
+          <button class="search-button">
+            <img src="assets/icons/search.png" alt="search" />
+          </button>
+        </form>
+      </div>
+      <div class="rightside">
+        <button class="language">
+          <img src="assets/icons/language.svg" alt="" />English
+        </button>
+        <button class="btn-alt" id="logIn">Log In</button>
+        <button class="btn" id="signIn">Sing Up</button>
+      </div>
+    </header>
+    <main>
+      <div class="mainBlock">
+        <div class="textButtonBlock">
+          <h1>The people platform—Where interests become friendships</h1>
+          <p>
+            Whatever your interest, from hiking and reading to networking and
+            skill sharing, there are thousands of people who share it on Meetup.
+            Events are happening every day—sign up to join the fun.
+          </p>
+          <button class="btn">Join Meetup</button>
+        </div>
+
+        <div class="imageBox">
+          <img src="assets/images/irl_event.svg fill.png" alt="" />
+        </div>
+      </div>
+      <div class="events">
+        <div class="eventBar">
+          <div class="eventLeft">
+            <h2>Events near</h2>
+            <div class="eventsAddres">
+              <p>Mountain View, CA</p>
+              <img src="assets/icons/pancil.svg" alt="" />
+            </div>
+          </div>
+          <button class="seAllEventsBtn disabled">See all events</button>
+        </div>
+        <div class="eventsList"></div>
+      </div>
+      <div class="upcomigEvents"></div>
+      <div class="joinMeetUp"></div>
+      <div class="categories"></div>
+      <div class="cities"></div>
+      <div class="instruction"></div>
+      <div class="frendships"></div>
+    </main>
     <footer></footer>
     <script src="scripts/script.js"></script>
+    <script type="module" src="scripts/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #1f1f1f;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #00798a;
+  color: #fff;
+}
+
+.btn-alt {
+  background: none;
+}
+
+header {
+  height: 64px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .leftside,
+header .rightside {
+  display: flex;
+  align-items: center;
+}
+header .leftside {
+  gap: 20px;
+}
+header .rightside {
+  gap: 16px;
+}
+header .rightside button {
+  background: none;
+  font-size: 13px;
+}
+header .rightside .btn {
+  background: #00798a;
+  color: #fff;
+}
+header .rightside .language {
+  display: flex;
+  gap: 5px;
+}
+
+.search-bar {
+  display: flex;
+}
+.search-bar input {
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.search-bar input:first-child {
+  width: 160px;
+  border-radius: 4px 0 0 4px;
+}
+.search-bar input:nth-child(2) {
+  width: 150px;
+  border-left: 0;
+}
+.search-bar .search-button {
+  width: 36px;
+  height: 36px;
+  background: #f65858;
+  border-radius: 0 4px 4px 0;
+}
+.search-bar .search-button img {
+  width: 16px;
+  height: 16px;
+}
+
+.mainBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 150px;
+}
+
+.textButtonBlock {
+  max-width: 480px;
+}
+.textButtonBlock h1 {
+  margin: 0 0 24px;
+  font-size: 36px;
+}
+.textButtonBlock p {
+  margin: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.imageBox img {
+  max-width: 100%;
+}
+
+.events {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.eventBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 650px;
+}
+
+.eventLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.eventsAddres {
+  background-color: rgba(151, 202, 209, 0.12);
+  color: #00798a;
+  width: 239.42px;
+  height: 44px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8%;
+}
+.eventsAddres p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.eventsList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 10 px;
+  grid-row-gap: 10 px;
+  margin-left: 80px;
+  max-width: 1196px;
+  width: 100%;
+  height: 750px;
+  overflow-y: hidden;
+}
+.eventsList .event-card {
+  width: 272px;
+  height: 399px;
+}
+.eventsList .event-card img {
+  width: 100%;
+  height: 153px;
+  border-radius: 10px;
+}
+
+.seAllEventsBtn {
+  background-color: transparent;
+  color: #00798a;
+}/*# sourceMappingURL=styles.css.map */
