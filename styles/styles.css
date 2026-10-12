@@ -120,7 +120,7 @@ header .rightside .language {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 650px;
+  width: 1130px;
 }
 
 .eventLeft {
@@ -169,4 +169,20 @@ header .rightside .language {
 .seAllEventsBtn {
   background-color: transparent;
   color: #00798a;
+}
+
+.upcomigEvents {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.headerUpEvents {
+  display: flex;
+  justify-content: space-between;
+  width: 1140px;
+}
+
+.upcommingList {
+  height: 450px;
 }/*# sourceMappingURL=styles.css.map */

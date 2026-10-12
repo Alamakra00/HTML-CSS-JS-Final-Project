@@ -35,7 +35,15 @@ eventsStore.forEach((event) => {
 
 const sAllBtn = document.querySelector('.seAllEventsBtn');
 
+let isExpanded = false;
+
 sAllBtn.addEventListener('click', () => {
-  eventsContainer.style.height = '1600px';
-  sAllBtn.textContent = 'Show less elements';
+  if (isExpanded) {
+    eventsContainer.style.height = '';
+    sAllBtn.textContent = 'See all events';
+  } else {
+    eventsContainer.style.height = '1600px';
+    sAllBtn.textContent = 'Show less elements';
+  }
+  isExpanded = !isExpanded;
 });
