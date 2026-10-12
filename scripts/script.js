@@ -47,3 +47,21 @@ sAllBtn.addEventListener('click', () => {
   }
   isExpanded = !isExpanded;
 });
+
+const upcommingList = document.querySelector('.upcommingList');
+
+eventsStore.forEach((event) => {
+  upcommingList.append(createEventCard(event));
+});
+
+let upcommingIsExpanded = false;
+sAllBtn.addEventListener('click', () => {
+  if (isExpanded) {
+    upcommingList.style.height = '';
+    sAllBtn.textContent = 'See all events';
+  } else {
+    upcommingList.style.height = '900px';
+    sAllBtn.textContent = 'Show less elements';
+  }
+  upcommingIsExpanded = !upcommingIsExpanded;
+});

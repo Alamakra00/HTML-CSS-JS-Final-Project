@@ -174,6 +174,8 @@ header .rightside .language {
 .upcomigEvents {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 30px;
 }
 
@@ -181,8 +183,33 @@ header .rightside .language {
   display: flex;
   justify-content: space-between;
   width: 1140px;
+  height: 100px;
+  align-items: center;
+}
+
+.seAllUpEventsBtn {
+  background-color: transparent;
+  color: #00798a;
 }
 
 .upcommingList {
+  display: flex;
+  gap: 10px;
   height: 450px;
+  max-width: 1140px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.upcommingList .event-card {
+  width: 272px;
+  height: 399px;
+  flex-shrink: 0;
+}
+.upcommingList .event-card img {
+  width: 100%;
+  height: 153px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
 }/*# sourceMappingURL=styles.css.map */
