@@ -30,7 +30,28 @@ const categories = [
   { title: 'Games', icon: 'assets/images/boxes/games.svg.svg' },
 ];
 // обьекты бокс
-
+const cities = [
+  {
+    img: 'assets/images/cities/chicago.webp.png',
+    title: 'Chicago',
+  },
+  {
+    img: 'assets/images/cities/new_york.webp.png',
+    title: 'New York',
+  },
+  {
+    img: 'assets/images/cities/san_francisco.webp.png',
+    title: 'San Francisco',
+  },
+  {
+    img: 'assets/images/cities/miami.webp.png',
+    title: 'Miami',
+  },
+  {
+    img: 'assets/images/cities/nashville.webp.png',
+    title: 'Nashville',
+  },
+];
 // конвертировал дату и время в удобный формат
 function formatDate(date) {
   const day = date.toLocaleDateString('en-US', {
@@ -118,4 +139,16 @@ categories.forEach((category) => {
     <p>${category.title}</p>
   `;
   boxes.append(box);
+});
+
+const cities_box = document.querySelector('.cities_box');
+
+cities.forEach((city) => {
+  const city_card = document.createElement('div');
+  city_card.classList = 'city_card';
+  city_card.innerHTML = `
+    <img class="box__icon" src="${city.img}" alt="" />
+    <p>${city.title}</p>
+  `;
+  cities_box.append(city_card);
 });

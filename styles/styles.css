@@ -264,4 +264,35 @@ main {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.cities {
+  margin-top: 50px;
+}
+.cities p {
+  color: #929292;
+}
+
+.cities_box {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+}
+
+.city_card {
+  margin-top: 40px;
+  height: 257px;
+  width: 205px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.city_card p {
+  margin-top: 30px;
+  text-transform: capitalize;
+  color: black;
+  font-weight: 500;
 }/*# sourceMappingURL=styles.css.map */
