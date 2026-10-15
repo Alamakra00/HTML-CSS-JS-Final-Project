@@ -21,10 +21,16 @@ function createEventCard(event) {
 
   card.innerHTML = `
     <img class="event-card__image" src="${event.image}" alt="${event.title}" />
-    <h3 class="event-card__title">${event.title}</h3>
-    <p class="event-card__category">${event.category} (${event.distance} km)</p>
-    <p class="event-card__date">${formatDate(event.date)}</p>
-    <p class="event-card__attendees">${event.attendees} going</p>
+  <h3 class="event-card__title">${event.title}</h3>
+  <p class="event-card__category">${event.category} (${event.distance} km)</p>
+  <p class="event-card__info">
+    <img src="assets/icons/calendar.svg" alt="" />
+    ${formatDate(event.date)}
+  </p>
+  <p class="event-card__info">
+    <img src="assets/icons/check.svg" alt="" />
+    ${event.attendees} going
+  </p>
   `;
   return card;
 }

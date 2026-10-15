@@ -156,12 +156,24 @@ main {
   width: 100%;
   height: 399px;
 }
-.eventsList .event-card img {
+.eventsList .event-card .event-card__image {
   width: 100%;
   height: 153px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+
+.event-card__info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+}
+.event-card__info img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .seAllEventsBtn {
@@ -188,7 +200,7 @@ main {
 .upcommingList {
   display: flex;
   gap: 15px;
-  height: 450px;
+  height: 420px;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -197,10 +209,35 @@ main {
   height: 399px;
   flex-shrink: 0;
 }
-.upcommingList .event-card img {
+.upcommingList .event-card .event-card__image {
   width: 100%;
   height: 153px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 10px;
+}
+
+.joinBox {
+  display: flex;
+  max-width: 1192px;
+  max-height: 236px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(151, 202, 209, 0.08);
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+
+.boxLeft {
+  max-width: 739px;
+  width: 100%;
+}
+
+.signInBtn {
+  width: 192px;
+  height: 40px;
+  background-color: #e32359;
+  color: white;
+  border: 0;
   border-radius: 10px;
 }/*# sourceMappingURL=styles.css.map */
