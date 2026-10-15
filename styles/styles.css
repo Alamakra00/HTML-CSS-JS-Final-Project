@@ -240,4 +240,28 @@ main {
   color: white;
   border: 0;
   border-radius: 10px;
+}
+
+.categories {
+  margin-top: 50px;
+}
+
+.boxes {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.boxes .box {
+  width: 135px;
+  height: 112px;
+  background-color: rgba(151, 202, 209, 0.08);
+  color: black;
+  border-radius: 10px;
+  display: flex;
+  padding-top: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

@@ -1,6 +1,36 @@
 import { eventsStore } from './index.js';
 // тяпнул данные из модуля с JSON
 
+const categories = [
+  {
+    title: 'Travel and Outdoor',
+    icon: 'assets/images/boxes/travel_and_outdoor.svg.svg',
+  },
+  {
+    title: 'Social Activities',
+    icon: 'assets/images/boxes/social_activities.svg.svg',
+  },
+  {
+    title: 'Hobbies and Passion',
+    icon: 'assets/images/boxes/hobbies_and_passions.svg.svg',
+  },
+  {
+    title: 'Sports and Fitness',
+    icon: 'assets/images/boxes/sports_and_fitness.svg.svg',
+  },
+  {
+    title: 'Health and Wellbeing',
+    icon: 'assets/images/boxes/health_and_wellness.svg.svg',
+  },
+  { title: 'Technology', icon: 'assets/images/boxes/technology.svg.svg' },
+  {
+    title: 'Art and Culture',
+    icon: 'assets/images/boxes/art_and_culture.svg.svg',
+  },
+  { title: 'Games', icon: 'assets/images/boxes/games.svg.svg' },
+];
+// обьекты бокс
+
 // конвертировал дату и время в удобный формат
 function formatDate(date) {
   const day = date.toLocaleDateString('en-US', {
@@ -75,4 +105,17 @@ const joinBtn = document.getElementById('join');
 joinBtn.addEventListener('click', () => {
   window.open('filterPage.html');
   window.close('index.html');
+});
+
+const boxes = document.querySelector('.boxes');
+
+categories.forEach((category) => {
+  const box = document.createElement('div');
+  box.className = 'box';
+
+  box.innerHTML = `
+    <img class="box__icon" src="${category.icon}" alt="" />
+    <p>${category.title}</p>
+  `;
+  boxes.append(box);
 });
