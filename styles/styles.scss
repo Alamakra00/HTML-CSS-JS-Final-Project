@@ -8,7 +8,9 @@ $height-header: 64px;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
-
+#logo {
+  cursor: pointer;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -102,11 +104,15 @@ header {
   }
 }
 
+main {
+  max-width: 1190px;
+  margin: 0 auto;
+}
+
 .mainBlock {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 150px;
 }
 
 .textButtonBlock {
@@ -127,23 +133,19 @@ header {
 .imageBox img {
   max-width: 100%;
 }
-.events {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
+
 .eventBar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 1130px;
 }
+
 .eventLeft {
   display: flex;
   align-items: center;
   gap: 15px;
 }
+
 .eventsAddres {
   background-color: rgba($btn-color-background, 0.12);
   color: $btn-color-active;
@@ -164,19 +166,18 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 10 px;
-  grid-row-gap: 10 px;
-  margin-left: 80px;
-  max-width: 1196px;
-  width: 100%;
+  gap: 10px;
   height: 750px;
   overflow-y: hidden;
+
   .event-card {
-    width: 272px;
+    width: 100%;
     height: 399px;
+
     img {
       width: 100%;
       height: 153px;
+      object-fit: cover;
       border-radius: 10px;
     }
   }
@@ -186,22 +187,16 @@ header {
   background-color: transparent;
   color: $btn-color-active;
 }
+
 .upcomigEvents {
-  display: flex;
-  justify-content: center;
-
-  align-items: center;
-  flex-direction: column;
-
   margin-top: 30px;
 }
 
 .headerUpEvents {
   display: flex;
   justify-content: space-between;
-  width: 1140px;
-  height: 100px;
   align-items: center;
+  height: 100px;
 }
 
 .seAllUpEventsBtn {
@@ -213,8 +208,6 @@ header {
   display: flex;
   gap: 15px;
   height: 450px;
-  max-width: 1140px;
-  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
 

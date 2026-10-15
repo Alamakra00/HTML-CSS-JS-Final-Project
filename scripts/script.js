@@ -1,6 +1,7 @@
 import { eventsStore } from './index.js';
 // тяпнул данные из модуля с JSON
 
+// конвертировал дату и время в удобный формат
 function formatDate(date) {
   const day = date.toLocaleDateString('en-US', {
     weekday: 'short',
@@ -13,7 +14,7 @@ function formatDate(date) {
   });
   return `${day} · ${time}`.toUpperCase();
 }
-
+// создаём карточки основываясь на информации из json файла
 function createEventCard(event) {
   const card = document.createElement('div');
   card.className = 'event-card';
@@ -28,11 +29,13 @@ function createEventCard(event) {
   return card;
 }
 
+//заполняем div сгенерированными карточками
 const eventsContainer = document.querySelector('.eventsList');
 eventsStore.forEach((event) => {
   eventsContainer.append(createEventCard(event));
 });
 
+// эта кнопка короче помогает открыть ВСЕ карточки сразу
 const sAllBtn = document.querySelector('.seAllEventsBtn');
 
 let isExpanded = false;
@@ -54,14 +57,16 @@ eventsStore.forEach((event) => {
   upcommingList.append(createEventCard(event));
 });
 
-let upcommingIsExpanded = false;
-sAllBtn.addEventListener('click', () => {
-  if (isExpanded) {
-    upcommingList.style.height = '';
-    sAllBtn.textContent = 'See all events';
-  } else {
-    upcommingList.style.height = '900px';
-    sAllBtn.textContent = 'Show less elements';
-  }
-  upcommingIsExpanded = !upcommingIsExpanded;
+//открываем основной сайт при нажатии на лого
+const logoBtn = document.getElementById('logo');
+logoBtn.addEventListener('click', () => {
+  window.open('index.html');
+  window.close('filterPage.html');
+});
+
+//открываем вторую страницу при нажатии на кнопку
+const joinBtn = document.getElementById('join');
+joinBtn.addEventListener('click', () => {
+  window.open('filterPage.html');
+  window.close('index.html');
 });
