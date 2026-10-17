@@ -16,6 +16,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #1f1f1f;
+  background-color: white;
 }
 
 button {
@@ -311,4 +312,34 @@ main {
     color: black;
     font-weight: 500;
   }
+}
+
+.two_box_section {
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  background-color: rgba($btn-color-background, 0.08);
+  width: 580px;
+  height: 180px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+
+  img {
+    width: 41px;
+    height: 41px;
+    margin: 25px 20px;
+  }
+
+  button {
+    background-color: transparent;
+    color: #00798a;
+  }
+}
+
+footer {
+  height: 559px;
+  width: 100%;
+  background-color: $footer-color;
 }
