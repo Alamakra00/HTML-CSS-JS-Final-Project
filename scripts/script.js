@@ -52,6 +52,27 @@ const cities = [
     title: 'Nashville',
   },
 ];
+
+const frndShipPosts = [
+  {
+    img: '/assets/images/frendShpPosts/first_article.webp.png',
+    title: 'I Used Meetup to Make Friends at Brunch',
+    text: 'New Jersey-based writer and college student Brianna Stryker wanted to meet friends in her hometown. Learn how she used Meetup to make connections by joining a Girls Night Out Meetup group.',
+    btn: `<button class = "altBtn">Read more</button>`,
+  },
+  {
+    img: '/assets/images/frendShpPosts/second_article.webp.png',
+    title: 'How to Turn Casual Connections into Close Friendships',
+    text: 'New Jersey-based writer and college student Brianna Stryker wanted to meet friends in her hometown. Learn how she used Meetup to make connections by joining a Girls Night Out Meetup group.',
+    btn: `<button class = "altBtn">Read more</button>`,
+  },
+  {
+    img: '/assets/images/frendShpPosts/third_article.webp.png',
+    title: 'Do You Have the “Right” Number of Friends?',
+    text: 'New Jersey-based writer and college student Brianna Stryker wanted to meet friends in her hometown. Learn how she used Meetup to make connections by joining a Girls Night Out Meetup group.',
+    btn: `<button class = "altBtn">Read more</button>`,
+  },
+];
 // конвертировал дату и время в удобный формат
 function formatDate(date) {
   const day = date.toLocaleDateString('en-US', {
@@ -84,6 +105,19 @@ function createEventCard(event) {
   </p>
   `;
   return card;
+}
+
+//создаем пост
+function createPost(post) {
+  const post_card = document.createElement('div');
+  post_card.className = 'post';
+  post_card.innerHTML = `
+  <img src = "${post.img}" alt = "PostPhoto">
+  <h3>${post.title}</h3>
+  <p>${post.text}</p>
+  ${post.btn}
+  `;
+  return post_card;
 }
 
 //заполняем div сгенерированными карточками
@@ -151,4 +185,10 @@ cities.forEach((city) => {
     <p>${city.title}</p>
   `;
   cities_box.append(city_card);
+});
+
+const postsBox = document.querySelector('.frendshipsPosts');
+
+frndShipPosts.forEach((posts) => {
+  postsBox.append(createPost(posts));
 });

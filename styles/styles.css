@@ -271,7 +271,7 @@ main {
   margin-top: 50px;
 }
 .cities p {
-  color: #929292;
+  color: #707070;
 }
 
 .cities_box {
@@ -321,8 +321,133 @@ main {
   color: #00798a;
 }
 
+.frendships {
+  margin-top: 30px;
+}
+.frendships p {
+  color: #707070;
+  font-weight: 300;
+}
+
+.frendshipsPosts {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.frendshipsPosts .post {
+  margin-top: 30px;
+  cursor: pointer;
+  gap: 10px;
+}
+.frendshipsPosts .post img {
+  width: 376px;
+  height: 191.5px;
+}
+.frendshipsPosts .post p {
+  width: 370px;
+  color: #707070;
+  font-weight: 300;
+}
+.frendshipsPosts .post button {
+  background-color: transparent;
+  color: #00798a;
+}
+.frendshipsPosts {
+  margin-bottom: 70px;
+}
+
 footer {
   height: 559px;
   width: 100%;
   background-color: #212121;
+  color: white;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer > div {
+  width: 100%;
+  max-width: 1190px;
+}
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer li {
+  color: #cfcfcf;
+}
+
+.first_footerBlock {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 28px 0;
+  border-bottom: 1px solid #555;
+}
+.first_footerBlock p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.first_footerBlock button {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+}
+
+.second_footerBlock {
+  display: flex;
+  padding-top: 30px;
+}
+.second_footerBlock .list_one,
+.second_footerBlock .list_two,
+.second_footerBlock .list_three {
+  flex: 1;
+}
+.second_footerBlock li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.second_footerBlock li:first-child {
+  font-size: 18px;
+  color: white;
+}
+
+.footer_socialMedia {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+.footer_socialMedia ul {
+  display: flex;
+  gap: 30px;
+}
+.footer_socialMedia li img {
+  width: 30px;
+  height: 30px;
+}
+.footer_socialMedia .apps {
+  display: flex;
+  gap: 28px;
+}
+.footer_socialMedia .apps img {
+  height: 46px;
+  width: auto;
+}
+
+.lastList {
+  margin-top: 40px;
+}
+.lastList ul {
+  display: flex;
+  gap: 36px;
+}
+.lastList li:first-child {
+  color: white;
 }/*# sourceMappingURL=styles.css.map */
