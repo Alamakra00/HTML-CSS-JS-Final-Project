@@ -167,6 +167,12 @@ main {
   border-radius: 10px;
 }
 
+.event_list {
+  display: grid;
+  height: 750px;
+  overflow-y: hidden;
+}
+
 .event-card__info {
   display: flex;
   align-items: center;
@@ -510,4 +516,374 @@ main > h2 {
   color: #1f1f1f;
   font-size: 14px;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  /* ---------- header ---------- */
+  header {
+    height: auto;
+    flex-wrap: wrap;
+    row-gap: 12px;
+    padding: 12px 16px;
+    /* .leftside "растворяем" (display: contents), чтобы логотип, правые кнопки
+       и поиск стали соседями: логотип и кнопки в первой строке, поиск во второй */
+  }
+  header .leftside {
+    display: contents;
+  }
+  header .leftside > img {
+    order: 1;
+  }
+  header .rightside {
+    order: 2;
+    gap: 12px;
+  }
+  .search-bar {
+    order: 3;
+    width: 100%;
+  }
+  .search-bar input:first-child {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 40px;
+  }
+  .search-bar {
+    /* поле города на мобильной версии скрыто */
+  }
+  .search-bar input:nth-child(2) {
+    display: none;
+  }
+  .search-bar .search-button {
+    width: 40px;
+    height: 40px;
+  }
+  /* ---------- общие отступы и заголовки ---------- */
+  main {
+    padding: 0 16px;
+  }
+  .eventBar h2,
+  .headerUpEvents h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  .joinBox h2,
+  .categories h2,
+  .cities h2,
+  .instruction h2,
+  .frendships h2 {
+    margin: 0 0 12px;
+    font-size: 18px;
+  }
+  /* ---------- hero ---------- */
+  .mainBlock {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 24px;
+  }
+  .textButtonBlock {
+    max-width: 100%;
+  }
+  .textButtonBlock h1 {
+    margin: 0 0 12px;
+    font-size: 24px;
+  }
+  .textButtonBlock p {
+    margin: 0;
+    font-size: 12px;
+  }
+  .textButtonBlock {
+    /* в макете кнопки Join Meetup в hero нет */
+  }
+  .textButtonBlock .btn {
+    display: none;
+  }
+  .imageBox {
+    align-self: center;
+  }
+  .imageBox img {
+    width: 100%;
+    max-width: 260px;
+  }
+  /* ---------- Events near / Upcoming online events ---------- */
+  .eventBar {
+    margin-top: 32px;
+  }
+  .eventLeft {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+  .eventsAddres {
+    width: auto;
+    height: 32px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+  .eventsAddres p {
+    margin: 0;
+    font-size: 14px;
+  }
+  .eventsAddres img {
+    width: 16px;
+    height: 16px;
+  }
+  .seAllEventsBtn,
+  .seAllUpEventsBtn {
+    display: none;
+  }
+  .upcomigEvents {
+    margin-top: 40px;
+  }
+  .headerUpEvents {
+    height: auto;
+    margin-bottom: 8px;
+  }
+  /* оба списка: вертикальная колонка карточек "картинка слева, текст справа" */
+  .eventsList,
+  .upcommingList {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: auto;
+    overflow: visible;
+  }
+  .eventsList .event-card,
+  .upcommingList .event-card {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    -moz-column-gap: 12px;
+         column-gap: 12px;
+    align-content: start;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    padding: 12px 0;
+    border-top: 1px solid #e6e6e6;
+    /* на мобильной версии показываем только первые три карточки */
+  }
+  .eventsList .event-card:nth-child(n+4),
+  .upcommingList .event-card:nth-child(n+4) {
+    display: none;
+  }
+  .eventsList .event-card .event-card__image,
+  .upcommingList .event-card .event-card__image {
+    grid-column: 1;
+    grid-row: 1/5;
+    width: 96px;
+    height: 64px;
+    border-radius: 8px;
+  }
+  .eventsList .event-card,
+  .upcommingList .event-card {
+    /* дата идёт первой, как в макете */
+  }
+  .eventsList .event-card .event-card__category + .event-card__info,
+  .upcommingList .event-card .event-card__category + .event-card__info {
+    grid-row: 1;
+    color: #7c6f50;
+    font-weight: 500;
+  }
+  .eventsList .event-card .event-card__title,
+  .upcommingList .event-card .event-card__title {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0 0 4px;
+    font-size: 14px;
+  }
+  .eventsList .event-card .event-card__category,
+  .upcommingList .event-card .event-card__category {
+    grid-column: 2;
+    grid-row: 3;
+    margin: 0;
+    color: #707070;
+    font-size: 12px;
+  }
+  .eventsList .event-card .event-card__info + .event-card__info,
+  .upcommingList .event-card .event-card__info + .event-card__info {
+    grid-row: 4;
+    color: #707070;
+    font-weight: 400;
+  }
+  .eventsList .event-card .event-card__info,
+  .upcommingList .event-card .event-card__info {
+    grid-column: 2;
+    margin: 4px 0 0;
+    font-size: 12px;
+  }
+  .eventsList .event-card .event-card__info img,
+  .upcommingList .event-card .event-card__info img {
+    display: none;
+  }
+  /* ---------- Join Meetup ---------- */
+  /* блок на всю ширину экрана: компенсируем padding у main */
+  .joinMeetUp {
+    margin: 40px -16px 0;
+  }
+  .joinBox {
+    flex-direction: column;
+    max-height: none;
+    height: auto;
+    padding: 16px;
+    border-radius: 0;
+    /* .boxLeft "растворяем", чтобы поставить картинку между заголовком и текстом */
+  }
+  .joinBox .boxLeft {
+    display: contents;
+  }
+  .joinBox h2 {
+    order: 1;
+  }
+  .joinBox > img {
+    order: 2;
+    align-self: center;
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+  }
+  .joinBox p {
+    order: 3;
+    margin: 12px 0 16px;
+    font-size: 12px;
+  }
+  .joinBox .signInBtn {
+    order: 4;
+    width: 100%;
+  }
+  /* ---------- Explore top categories ---------- */
+  .categories {
+    margin-top: 40px;
+  }
+  .boxes {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  /* ---------- Popular cities ---------- */
+  .cities {
+    margin-top: 40px;
+  }
+  .cities .citiesBox_text {
+    margin: 0;
+    font-size: 12px;
+  }
+  .cities_box {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 16px;
+  }
+  .city_card {
+    width: 155px;
+    height: auto;
+    margin-top: 24px;
+  }
+  .city_card img {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .city_card p {
+    margin: 12px 0 0;
+    font-size: 14px;
+  }
+  /* ---------- How Meetup works ---------- */
+  .instruction {
+    margin-top: 40px;
+  }
+  .two_box_section {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .container {
+    width: 100%;
+    height: auto;
+    padding-bottom: 16px;
+  }
+  .container img {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    margin: 16px 16px 0;
+  }
+  .container .infoText {
+    min-width: 0;
+    padding: 16px 16px 0 0;
+  }
+  .container .infoText h3 {
+    margin: 0 0 4px;
+    font-size: 14px;
+  }
+  .container .infoText p {
+    margin: 0 0 8px;
+    font-size: 12px;
+  }
+  .container button {
+    padding: 0;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  /* ---------- Friendships ---------- */
+  .frendships {
+    margin-top: 40px;
+  }
+  .frendships > p {
+    margin: 0;
+    font-size: 12px;
+  }
+  .frendshipsPosts {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .frendshipsPosts .post {
+    margin-top: 0;
+  }
+  .frendshipsPosts .post img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/1;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 8px;
+  }
+  .frendshipsPosts .post h3 {
+    margin: 12px 0 8px;
+    font-size: 14px;
+  }
+  .frendshipsPosts .post p {
+    width: 100%;
+    margin: 0 0 8px;
+    font-size: 12px;
+  }
+  .frendshipsPosts .post button {
+    padding: 0;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  /* ---------- footer (макета для мобильной версии не было, сделано базово) ---------- */
+  footer {
+    height: auto;
+    padding: 0 16px 24px;
+  }
+  .first_footerBlock {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .second_footerBlock {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .footer_socialMedia {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .footer_socialMedia ul {
+    gap: 20px;
+  }
+  .lastList ul {
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
 }/*# sourceMappingURL=styles.css.map */

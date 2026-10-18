@@ -4,14 +4,6 @@ import { cities } from './index.js';
 import { frndShipPosts } from './index.js';
 // тяпнул данные из модуля с JSON
 
-// маленький помощник: создаёт элемент с классом и текстом
-function el(tag, className, text) {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text) node.textContent = text;
-  return node;
-}
-
 // конвертировал дату и время в удобный формат
 function formatDate(date) {
   const day = date.toLocaleDateString('en-US', {
@@ -137,87 +129,3 @@ const postsBox = document.querySelector('.frendshipsPosts');
 frndShipPosts.forEach((posts) => {
   postsBox.append(createPost(posts));
 });
-
-// ---- Map (Leaflet + OpenStreetMap) ----
-// Collapsed: a static preview. "Browse in map" opens it full screen and interactive.
-// Весь блок обёрнут в if (mapBox), чтобы скрипт не падал на страницах без карты.
-const NEW_YORK = [40.7128, -74.006];
-const mapBox = document.getElementById('map-box');
-
-if (mapBox) {
-  const mapBtn = mapBox.querySelector('.map__btn');
-  const mapClose = mapBox.querySelector('.map__close');
-  let map = null;
-  let markers = null;
-
-  function setMapInteractive(on) {
-    if (!map) return;
-    const handlers = [
-      map.dragging,
-      map.touchZoom,
-      map.doubleClickZoom,
-      map.scrollWheelZoom,
-      map.boxZoom,
-      map.keyboard,
-    ];
-    handlers.forEach((h) => (on ? h.enable() : h.disable()));
-  }
-
-  function popupContent(ev) {
-    const box = el('div', 'map-popup');
-    box.appendChild(el('p', 'map-popup__date', formatDate(ev.date)));
-    box.appendChild(el('p', 'map-popup__title', ev.title));
-    box.appendChild(el('p', 'map-popup__cat', categoryText(ev)));
-    return box;
-  }
-
-  // Если у события нет coords, ставим временную точку рядом с Нью-Йорком.
-  // Лучше добавить в каждый объект eventsStore поле coords: [lat, lng].
-  function eventPosition(ev, index) {
-    if (ev.coords) return ev.coords;
-    const angle = (index / eventsStore.length) * 2 * Math.PI;
-    return [
-      NEW_YORK[0] + Math.sin(angle) * 0.25,
-      NEW_YORK[1] + Math.cos(angle) * 0.25,
-    ];
-  }
-
-  if (window.L) {
-    map = L.map('map', {
-      center: NEW_YORK,
-      zoom: 9,
-      zoomControl: false,
-      attributionControl: false,
-    });
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(map);
-    markers = L.featureGroup().addTo(map);
-    L.control.attribution({ prefix: false }).addTo(map);
-    setMapInteractive(false);
-    mapBox.classList.add('map--live');
-
-    // маркеры для всех событий
-    eventsStore.forEach((ev, index) => {
-      L.marker(eventPosition(ev, index))
-        .bindPopup(popupContent(ev))
-        .addTo(markers);
-    });
-
-    // открыть карту на весь экран
-    mapBtn.addEventListener('click', () => {
-      mapBox.classList.add('map--open');
-      setMapInteractive(true);
-      map.invalidateSize();
-    });
-
-    // закрыть обратно в превью
-    mapClose.addEventListener('click', () => {
-      mapBox.classList.remove('map--open');
-      setMapInteractive(false);
-      map.invalidateSize();
-    });
-  }
-}
