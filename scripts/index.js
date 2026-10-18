@@ -165,3 +165,76 @@ export const eventsStore = [
     distance: 14,
   },
 ];
+
+export const categories = [
+  {
+    title: 'Travel and Outdoor',
+    icon: 'assets/images/boxes/travel_and_outdoor.svg.svg',
+  },
+  {
+    title: 'Social Activities',
+    icon: 'assets/images/boxes/social_activities.svg.svg',
+  },
+  {
+    title: 'Hobbies and Passion',
+    icon: 'assets/images/boxes/hobbies_and_passions.svg.svg',
+  },
+  {
+    title: 'Sports and Fitness',
+    icon: 'assets/images/boxes/sports_and_fitness.svg.svg',
+  },
+  {
+    title: 'Health and Wellbeing',
+    icon: 'assets/images/boxes/health_and_wellness.svg.svg',
+  },
+  { title: 'Technology', icon: 'assets/images/boxes/technology.svg.svg' },
+  {
+    title: 'Art and Culture',
+    icon: 'assets/images/boxes/art_and_culture.svg.svg',
+  },
+  { title: 'Games', icon: 'assets/images/boxes/games.svg.svg' },
+];
+// обьекты бокс
+export const cities = [
+  {
+    img: 'assets/images/cities/chicago.webp.png',
+    title: 'Chicago',
+  },
+  {
+    img: 'assets/images/cities/new_york.webp.png',
+    title: 'New York',
+  },
+  {
+    img: 'assets/images/cities/san_francisco.webp.png',
+    title: 'San Francisco',
+  },
+  {
+    img: 'assets/images/cities/miami.webp.png',
+    title: 'Miami',
+  },
+  {
+    img: 'assets/images/cities/nashville.webp.png',
+    title: 'Nashville',
+  },
+];
+
+export const frndShipPosts = [
+  {
+    img: '/assets/images/frendShpPosts/first_article.webp.png',
+    title: 'I Used Meetup to Make Friends at Brunch',
+    text: 'New Jersey-based writer and college student Brianna Stryker wanted to meet friends in her hometown. Learn how she used Meetup to make connections by joining a Girls Night Out Meetup group.',
+    btn: `<button class = "altBtn">Read more</button>`,
+  },
+  {
+    img: '/assets/images/frendShpPosts/second_article.webp.png',
+    title: 'How to Turn Casual Connections into Close Friendships',
+    text: 'New Jersey-based writer and college student Brianna Stryker wanted to meet friends in her hometown. Learn how she used Meetup to make connections by joining a Girls Night Out Meetup group.',
+    btn: `<button class = "altBtn">Read more</button>`,
+  },
+  {
+    img: '/assets/images/frendShpPosts/third_article.webp.png',
+    title: 'Do You Have the “Right” Number of Friends?',
+    text: 'New Jersey-based writer and college student Brianna Stryker wanted to meet friends in her hometown. Learn how she used Meetup to make connections by joining a Girls Night Out Meetup group.',
+    btn: `<button class = "altBtn">Read more</button>`,
+  },
+];
