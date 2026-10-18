@@ -454,160 +454,60 @@ footer li {
   color: white;
 }
 
-.ev-side {
+.sr-only {
   position: absolute;
-  left: 1029px;
-  top: 81px;
-  width: 350px;
-}
-
-.ev-side small {
-  display: block;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.ev-side strong {
-  display: block;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 28px;
-}
-
-.map {
-  position: relative;
-  width: 350px;
-  height: 285px;
-  margin-top: 14px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.map > img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-/* Живая карта (Leaflet) поверх картинки-заглушки */
-.map__canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: transparent;
-  font: inherit;
-}
-
-.map--live .map__canvas {
-  cursor: pointer;
-}
-
-.map--open {
-  position: fixed;
-  inset: 24px;
-  z-index: 1000;
-  width: auto;
-  height: auto;
-  margin: 0;
-  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-}
-
-.map--open .map__canvas {
-  cursor: grab;
-}
-
-.map--open .map__btn {
-  display: none;
-}
-
-.map--open .map__close {
-  right: 16px;
-  top: 16px;
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-.map-opened {
-  overflow: hidden;
-}
-
-.map-popup__date {
-  color: #7c6f50;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  text-transform: uppercase;
-}
-
-.map-popup__title {
-  margin-top: 4px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.map-popup__cat {
-  margin-top: 2px;
-  color: #707070;
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.leaflet-popup-content p {
-  margin: 0;
-}
-
-.map__close {
-  z-index: 1;
-  position: absolute;
-  right: 15px;
-  top: 11px;
-  width: 15px;
-  height: 15px;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
   padding: 0;
   border: 0;
-  background: #fff;
-  cursor: pointer;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
-.map__close img {
-  width: 15px;
-  height: 15px;
+main > h2 {
+  margin: 20px 0 12px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-.map__btn {
-  z-index: 1;
-  position: absolute;
-  left: 89px;
-  top: 109px;
-  width: 172.41px;
-  height: 40.5px;
-  border: 2px solid #00798a;
-  border-radius: 8px;
-  background: #fff;
+/* вкладка "Events" */
+.events > h3 {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #00798a;
   color: #00798a;
+  font-size: 16px;
   font-weight: 500;
+}
+
+.filters_bar {
+  max-width: 592px;
+}
+
+/* ----- фильтры ----- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0 0 56px;
+}
+
+.filter {
+  height: 40px;
+  padding: 0 38px 0 16px;
+  border: 0;
+  border-radius: 20px;
+  background-color: #f3f3f3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231f1f1f' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  color: #1f1f1f;
   font-size: 14px;
-  line-height: 20px;
-}
-
-.map__btn > span:not(.expand) {
-  position: absolute;
-  left: 23.8px;
-  top: 8.25px;
-}
-
-.expand {
-  position: absolute;
-  left: 126.4px;
-  top: 9.25px;
-  width: 18px;
-  height: 18px;
-  overflow: clip;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */
