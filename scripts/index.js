@@ -220,19 +220,19 @@ export const cities = [
 
 export const frndShipPosts = [
   {
-    img: '/assets/images/frendShpPosts/first_article.webp.png',
+    img: 'assets/images/frendShpPosts/first_article.webp.png',
     title: 'I Used Meetup to Make Friends at Brunch',
     text: 'New Jersey-based writer and college student Brianna Stryker wanted to meet friends in her hometown. Learn how she used Meetup to make connections by joining a Girls Night Out Meetup group.',
     btn: `<button class = "altBtn">Read more</button>`,
   },
   {
-    img: '/assets/images/frendShpPosts/second_article.webp.png',
+    img: 'assets/images/frendShpPosts/second_article.webp.png',
     title: 'How to Turn Casual Connections into Close Friendships',
     text: 'New Jersey-based writer and college student Brianna Stryker wanted to meet friends in her hometown. Learn how she used Meetup to make connections by joining a Girls Night Out Meetup group.',
     btn: `<button class = "altBtn">Read more</button>`,
   },
   {
-    img: '/assets/images/frendShpPosts/third_article.webp.png',
+    img: 'assets/images/frendShpPosts/third_article.webp.png',
     title: 'Do You Have the “Right” Number of Friends?',
     text: 'New Jersey-based writer and college student Brianna Stryker wanted to meet friends in her hometown. Learn how she used Meetup to make connections by joining a Girls Night Out Meetup group.',
     btn: `<button class = "altBtn">Read more</button>`,
