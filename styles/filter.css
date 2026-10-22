@@ -272,7 +272,6 @@ main > h2 {
 }
 
 @media (max-width: 768px) {
-
   body {
     display: block;
   }
@@ -285,10 +284,6 @@ main > h2 {
 
   main > h2,
   .events {
-    text-align: center;
-  }
-
-  .event_list {
     text-align: left;
   }
 

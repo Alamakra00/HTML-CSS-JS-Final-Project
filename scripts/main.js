@@ -19,53 +19,43 @@ function formatDate(date) {
 }
 
 function categoryText(event) {
-  return `${event.category} (${event.distance} km)`;
+  return event.category;
 }
+
+const cameraIcon = `<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11z"/></svg>`;
 
 // создаём карточки основываясь на информации из json файла
 function createEventCard(event) {
   const card = document.createElement('div');
   card.className = 'event-card';
 
-  card.innerHTML = `
-    <img class="event-card__image" src="${event.image}" alt="${event.title}" />
-  <h3 class="event-card__title">${event.title}</h3>
-  <p class="event-card__category">${categoryText(event)}</p>
-  <p class="event-card__info">
-    <img src="assets/icons/calendar.svg" alt="" />
-    ${formatDate(event.date)}
-  </p>
-  <div class = "info">
-  <p class="event-card__info">
+  const online = event.attendees
+    ? ''
+    : `<img class="event-card__online" src="assets/icons/Online_Event.png" alt="Online Event" />
+  <p class="event-card__type">${cameraIcon} Online Event</p>`;
+
+  const attendees = event.attendees
+    ? `<p class="event-card__info event-card__attendees">
     <img src="assets/icons/check.svg" alt="" />
-    ${event.attendees} going
-  </p>
-  <p class="event-card__info">
-    <img src="assets/icons/ticket.svg" alt="" />
-    Free
-  </p></div>
-  
-  `;
-  if (!event.attendees) {
-    card.innerHTML = `
-    <img class="event-card__image" src="${event.image}" alt="${event.title}" />
-    <img class="event-card__online" src="assets/icons/Online_Event.png" alt="${
-      event.title
-    }" />
+    ${event.attendees} attendees
+  </p>`
+    : '';
+
+  card.innerHTML = `
+  <img class="event-card__image" src="${event.image}" alt="${event.title}" />
+  ${online}
   <h3 class="event-card__title">${event.title}</h3>
   <p class="event-card__category">${categoryText(event)}</p>
-  <p class="event-card__info">
+  <p class="event-card__info event-card__date">
     <img src="assets/icons/calendar.svg" alt="" />
     ${formatDate(event.date)}
-    
   </p>
-  <p class="event-card__info">
+  ${attendees}
+  <p class="event-card__info event-card__price">
     <img src="assets/icons/ticket.svg" alt="" />
     Free
   </p>
-  
   `;
-  }
   return card;
 }
 
