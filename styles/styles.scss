@@ -523,7 +523,6 @@ main > h2 {
   font-weight: 700;
 }
 
-/* вкладка "Events" */
 .events > h3 {
   display: inline-block;
   margin: 0 0 16px;
@@ -538,7 +537,6 @@ main > h2 {
   max-width: 592px;
 }
 
-/* Адаптив */
 @media (max-width: 1024px) {
   .map-card {
     width: 240px;
@@ -551,18 +549,210 @@ main > h2 {
 @media (max-width: 768px) {
   .map-card {
     display: none;
-  } /* в мобильном макете карты нет */
+  }
+}
+
+@media (max-width: 1240px) {
+  main {
+    padding: 0 24px;
+  }
+
+  .cities_box {
+    gap: 24px;
+  }
+
+  .city_card {
+    flex: 1;
+    min-width: 0;
+
+    img {
+      width: 100%;
+      max-width: 205px;
+      height: auto;
+    }
+  }
+
+  .two_box_section {
+    gap: 24px;
+  }
+
+  .container {
+    flex: 1;
+    width: auto;
+  }
+
+  .frendshipsPosts {
+    gap: 24px;
+
+    .post {
+      flex: 1;
+      min-width: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2 / 1;
+        object-fit: cover;
+      }
+
+      p {
+        width: auto;
+      }
+    }
+  }
+
+  footer {
+    height: auto;
+    padding: 0 24px 32px;
+  }
+
+  .lastList ul {
+    flex-wrap: wrap;
+    gap: 12px 36px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  header {
+    .rightside {
+      gap: 10px;
+    }
+  }
+
+  .search-bar input {
+    &:first-child {
+      width: 140px;
+    }
+
+    &:nth-child(2) {
+      width: 120px;
+    }
+  }
+
+  .mainBlock {
+    gap: 32px;
+    padding-top: 24px;
+
+    .textButtonBlock,
+    .imageBox {
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  .eventsList {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: none;
+    gap: 24px 16px;
+    height: auto;
+
+    .event-card {
+      height: auto;
+
+      &:nth-child(n + 7) {
+        display: none;
+      }
+    }
+  }
+
+  .joinBox {
+    align-items: center;
+    gap: 24px;
+    max-height: none;
+    padding: 24px 30px;
+
+    > img {
+      max-width: 40%;
+      height: auto;
+    }
+  }
+
+  .boxes,
+  .cities_box {
+    flex-wrap: wrap;
+    gap: 16px 24px;
+  }
+
+  .two_box_section {
+    gap: 20px;
+  }
+
+  .container {
+    flex: 1;
+    width: auto;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .cities_box {
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+
+  .city_card {
+    flex: 1;
+    max-width: 160px;
+    width: auto;
+    height: auto;
+    margin-top: 24px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    p {
+      margin-top: 16px;
+    }
+  }
+
+  .frendshipsPosts {
+    gap: 16px;
+    margin-bottom: 48px;
+
+    .post {
+      h3 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .first_footerBlock {
+    gap: 24px;
+  }
+
+  .second_footerBlock li {
+    font-size: 14px;
+
+    &:first-child {
+      font-size: 16px;
+    }
+  }
+
+  .footer_socialMedia {
+    flex-wrap: wrap;
+    gap: 24px;
+
+    ul {
+      gap: 20px;
+    }
+  }
 }
 @media (max-width: 767px) {
-  /* ---------- header ---------- */
+
   header {
     height: auto;
     flex-wrap: wrap;
     row-gap: 12px;
     padding: 12px 16px;
 
-    /* .leftside "растворяем" (display: contents), чтобы логотип, правые кнопки
-       и поиск стали соседями: логотип и кнопки в первой строке, поиск во второй */
     .leftside {
       display: contents;
 
@@ -588,7 +778,6 @@ main > h2 {
       height: 40px;
     }
 
-    /* поле города на мобильной версии скрыто */
     input:nth-child(2) {
       display: none;
     }
@@ -599,9 +788,16 @@ main > h2 {
     }
   }
 
-  /* ---------- общие отступы и заголовки ---------- */
+
   main {
+    max-width: 560px;
     padding: 0 16px;
+  }
+
+  .categories,
+  .cities,
+  .instruction {
+    text-align: center;
   }
 
   .eventBar h2,
@@ -619,12 +815,12 @@ main > h2 {
     font-size: 18px;
   }
 
-  /* ---------- hero ---------- */
   .mainBlock {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
     padding-top: 24px;
+    text-align: center;
   }
 
   .textButtonBlock {
@@ -640,7 +836,6 @@ main > h2 {
       font-size: 12px;
     }
 
-    /* в макете кнопки Join Meetup в hero нет */
     .btn {
       display: none;
     }
@@ -655,13 +850,15 @@ main > h2 {
     }
   }
 
-  /* ---------- Events near / Upcoming online events ---------- */
   .eventBar {
+    justify-content: center;
     margin-top: 32px;
+    margin-bottom: 8px;
   }
 
   .eventLeft {
     flex-wrap: wrap;
+    justify-content: center;
     gap: 8px 12px;
   }
 
@@ -692,11 +889,11 @@ main > h2 {
   }
 
   .headerUpEvents {
+    justify-content: center;
     height: auto;
     margin-bottom: 8px;
   }
 
-  /* оба списка: вертикальная колонка карточек "картинка слева, текст справа" */
   .eventsList,
   .upcommingList {
     display: flex;
@@ -716,7 +913,6 @@ main > h2 {
       padding: 12px 0;
       border-top: 1px solid #e6e6e6;
 
-      /* на мобильной версии показываем только первые три карточки */
       &:nth-child(n + 4) {
         display: none;
       }
@@ -730,7 +926,6 @@ main > h2 {
         border-radius: 8px;
       }
 
-      /* дата идёт первой, как в макете */
       .event-card__category + .event-card__info {
         grid-row: 1;
         color: #7c6f50;
@@ -770,8 +965,7 @@ main > h2 {
     }
   }
 
-  /* ---------- Join Meetup ---------- */
-  /* блок на всю ширину экрана: компенсируем padding у main */
+
   .joinMeetUp {
     margin: 40px -16px 0;
   }
@@ -780,10 +974,11 @@ main > h2 {
     flex-direction: column;
     max-height: none;
     height: auto;
-    padding: 16px;
+    align-items: center;
+    padding: 24px 16px;
     border-radius: 0;
+    text-align: center;
 
-    /* .boxLeft "растворяем", чтобы поставить картинку между заголовком и текстом */
     .boxLeft {
       display: contents;
     }
@@ -812,17 +1007,21 @@ main > h2 {
     }
   }
 
-  /* ---------- Explore top categories ---------- */
   .categories {
     margin-top: 40px;
   }
 
   .boxes {
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    gap: 12px;
+
+    .box {
+      width: calc(50% - 6px);
+      max-width: 160px;
+    }
   }
 
-  /* ---------- Popular cities ---------- */
   .cities {
     margin-top: 40px;
 
@@ -856,7 +1055,6 @@ main > h2 {
     }
   }
 
-  /* ---------- How Meetup works ---------- */
   .instruction {
     margin-top: 40px;
   }
@@ -870,6 +1068,7 @@ main > h2 {
     width: 100%;
     height: auto;
     padding-bottom: 16px;
+    text-align: left;
 
     img {
       flex-shrink: 0;
@@ -900,7 +1099,6 @@ main > h2 {
     }
   }
 
-  /* ---------- Friendships ---------- */
   .frendships {
     margin-top: 40px;
 
@@ -945,7 +1143,6 @@ main > h2 {
     }
   }
 
-  /* ---------- footer (макета для мобильной версии не было, сделано базово) ---------- */
   footer {
     height: auto;
     padding: 0 16px 24px;

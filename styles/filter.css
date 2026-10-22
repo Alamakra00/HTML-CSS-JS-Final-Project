@@ -205,7 +205,6 @@ main > h2 {
   cursor: pointer;
 }
 
-/* живая карта после клика на "Browse in map" */
 .map-card__map--active .map-card__image {
   pointer-events: auto;
   filter: none;
@@ -273,13 +272,24 @@ main > h2 {
 }
 
 @media (max-width: 768px) {
-  /* одна колонка: grid на body больше не нужен */
+
   body {
     display: block;
   }
 
   main {
+    max-width: 560px;
+    margin: 0 auto;
     padding: 24px 16px 40px;
+  }
+
+  main > h2,
+  .events {
+    text-align: center;
+  }
+
+  .event_list {
+    text-align: left;
   }
 
   aside {
@@ -295,7 +305,6 @@ main > h2 {
     font-size: 20px;
   }
 
-  /* Фильтры в одну строку с горизонтальным скроллом */
   .filters {
     flex-wrap: nowrap;
     gap: 14px;

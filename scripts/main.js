@@ -18,7 +18,6 @@ function formatDate(date) {
   return `${day} · ${time}`.toUpperCase();
 }
 
-// текст категории: "Technology (25 km)"
 function categoryText(event) {
   return `${event.category} (${event.distance} km)`;
 }

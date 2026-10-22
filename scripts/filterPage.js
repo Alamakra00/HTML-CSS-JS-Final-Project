@@ -2,7 +2,6 @@ import { eventsStore } from './index.js';
 import { MAP_URL } from './index.js';
 import { CITY } from './index.js';
 
-// ---- элементы страницы ----
 const eventList = document.querySelector('.event_list');
 const filtersForm = document.querySelector('.filters');
 const fDay = document.querySelector('#f-day');
@@ -35,12 +34,10 @@ function formatDate(date) {
   return `${day} · ${time}`.toUpperCase();
 }
 
-// текст категории: "Technology (25 km)"
 function categoryText(event) {
   return `${event.category} (${event.distance} km)`;
 }
 
-// нужен для фильтра по дню
 function dayKey(date) {
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const day = String(date.getDate()).padStart(2, '0');
@@ -52,7 +49,6 @@ function createEventCard(event) {
   const card = document.createElement('div');
   card.className = 'event-card_li';
 
-  // строку с участниками показываем только если поле attendees есть
   const attendees = event.attendees
     ? `<p class="event-card__info">
     <img src="assets/icons/check.svg" alt="" />
@@ -96,7 +92,6 @@ function createMapCard() {
   frame.loading = 'lazy';
   frame.tabIndex = -1;
 
-  // Browse in map — включает живую карту, крестик — возвращает превью
   function setMapActive(active) {
     map.classList.toggle('map-card__map--active', active);
     frame.tabIndex = active ? 0 : -1;
@@ -113,7 +108,6 @@ document.getElementById('map-root').append(createMapCard());
 
 // флиртуем с евентами
 
-// заполняем "Any day" днями, которые есть в базе
 const days = [...new Set(eventsStore.map((ev) => dayKey(ev.date)))].sort();
 
 days.forEach((key) => {
@@ -131,7 +125,6 @@ days.forEach((key) => {
   fDay.append(option);
 });
 
-// оставляем только события, подходящие под выбранные значения
 function getFilteredEvents() {
   return eventsStore.filter((ev) => {
     if (fDay.value && dayKey(ev.date) !== fDay.value) return false;
