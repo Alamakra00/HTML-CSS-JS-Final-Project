@@ -178,10 +178,20 @@ main {
     height: 399px;
 
     .event-card__image {
+      display: block;
       width: 100%;
       height: 153px;
       object-fit: cover;
       border-radius: 10px;
+    }
+    .event-card__online {
+      position: relative;
+      top: -145px;
+      left: 10px;
+    }
+    .info {
+      display: flex;
+      gap: 20px;
     }
   }
 }
@@ -242,6 +252,11 @@ main {
       height: 153px;
       object-fit: cover;
       border-radius: 10px;
+    }
+    .event-card__online {
+      position: relative;
+      top: -145px;
+      left: 10px;
     }
   }
 }
@@ -551,7 +566,7 @@ main > h2 {
     .leftside {
       display: contents;
 
-      > img {
+      > a {
         order: 1;
       }
     }
@@ -707,6 +722,7 @@ main > h2 {
       }
 
       .event-card__image {
+        display: block;
         grid-column: 1;
         grid-row: 1 / 5;
         width: 96px;

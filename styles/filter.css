@@ -13,6 +13,7 @@ header {
 
 main {
   grid-column: 2;
+  gap: 100px;
   grid-row: 2;
   min-width: 0;
   height: auto;
@@ -102,6 +103,12 @@ main > h2 {
   border-radius: 6px;
 }
 
+.event-card__online {
+  position: relative;
+  top: -145px;
+  left: 10px;
+}
+
 .event-card_li .event-card__info {
   display: block;
   margin: 0;
@@ -189,8 +196,28 @@ main > h2 {
   position: absolute;
   top: 6px;
   right: 6px;
-  display: flex;
+  display: none;
+  padding: 2px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
   color: #00798a;
+  cursor: pointer;
+}
+
+/* живая карта после клика на "Browse in map" */
+.map-card__map--active .map-card__image {
+  pointer-events: auto;
+  filter: none;
+  opacity: 1;
+}
+
+.map-card__map--active .map-card__close {
+  display: flex;
+}
+
+.map-card__map--active .map-card__browse {
+  display: none;
 }
 
 .map-card__close .material-symbols-outlined {
@@ -213,6 +240,7 @@ main > h2 {
   font-size: 12px;
   font-weight: 500;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .map-card__browse .material-symbols-outlined {

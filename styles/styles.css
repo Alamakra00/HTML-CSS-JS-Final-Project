@@ -160,11 +160,21 @@ main {
   height: 399px;
 }
 .eventsList .event-card .event-card__image {
+  display: block;
   width: 100%;
   height: 153px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+.eventsList .event-card .event-card__online {
+  position: relative;
+  top: -145px;
+  left: 10px;
+}
+.eventsList .event-card .info {
+  display: flex;
+  gap: 20px;
 }
 
 .event_list {
@@ -224,6 +234,11 @@ main {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+.upcommingList .event-card .event-card__online {
+  position: relative;
+  top: -145px;
+  left: 10px;
 }
 
 .joinBox {
@@ -520,7 +535,7 @@ main > h2 {
   header .leftside {
     display: contents;
   }
-  header .leftside > img {
+  header .leftside > a {
     order: 1;
   }
   header .rightside {
@@ -657,6 +672,7 @@ main > h2 {
   }
   .eventsList .event-card .event-card__image,
   .upcommingList .event-card .event-card__image {
+    display: block;
     grid-column: 1;
     grid-row: 1/5;
     width: 96px;

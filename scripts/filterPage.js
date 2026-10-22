@@ -1,4 +1,6 @@
-import { eventsStore, CITY, MAP_URL } from './index.js';
+import { eventsStore } from './index.js';
+import { MAP_URL } from './index.js';
+import { CITY } from './index.js';
 
 // ---- элементы страницы ----
 const eventList = document.querySelector('.event_list');
@@ -8,7 +10,7 @@ const fType = document.querySelector('#f-type');
 const fDistance = document.querySelector('#f-distance');
 const fCategory = document.querySelector('#f-category');
 
-// ---- помощники ----
+// я ленивый ,эта штука помогает быстрее создавать обьекты
 function el(tag, className, text) {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -38,14 +40,14 @@ function categoryText(event) {
   return `${event.category} (${event.distance} km)`;
 }
 
-// ключ дня вида "2024-03-13", нужен для фильтра по дню
+// нужен для фильтра по дню
 function dayKey(date) {
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const day = String(date.getDate()).padStart(2, '0');
   return `${date.getFullYear()}-${month}-${day}`;
 }
 
-// ---- карточка события ----
+// тяпаем карточку
 function createEventCard(event) {
   const card = document.createElement('div');
   card.className = 'event-card_li';
@@ -70,16 +72,15 @@ function createEventCard(event) {
   `;
   return card;
 }
+// карта нью йорка
 
 function createMapCard() {
-  // <aside> уже есть в HTML, поэтому здесь обычный div
   const card = el('div', 'map-card');
 
   const label = el('p', 'map-card__label', 'Find events near');
   const city = el('h2', 'map-card__city', CITY);
 
   const map = el('div', 'map-card__map');
-
   const close = el('button', 'map-card__close');
   close.type = 'button';
   close.setAttribute('aria-label', 'Close map');
@@ -94,11 +95,12 @@ function createMapCard() {
   frame.title = `Map of ${CITY}`;
   frame.loading = 'lazy';
   frame.tabIndex = -1;
+
+  // Browse in map — включает живую карту, крестик — возвращает превью
   function setMapActive(active) {
     map.classList.toggle('map-card__map--active', active);
     frame.tabIndex = active ? 0 : -1;
   }
-
   browse.addEventListener('click', () => setMapActive(true));
   close.addEventListener('click', () => setMapActive(false));
 
@@ -109,7 +111,7 @@ function createMapCard() {
 
 document.getElementById('map-root').append(createMapCard());
 
-// ---- фильтрация списка ----
+// флиртуем с евентами
 
 // заполняем "Any day" днями, которые есть в базе
 const days = [...new Set(eventsStore.map((ev) => dayKey(ev.date)))].sort();
@@ -146,6 +148,6 @@ function renderEvents() {
     eventList.append(createEventCard(ev));
   });
 }
-
+// выводим шляпу на экран
 filtersForm.addEventListener('change', renderEvents);
 renderEvents();

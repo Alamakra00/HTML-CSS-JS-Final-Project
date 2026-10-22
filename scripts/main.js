@@ -36,11 +36,37 @@ function createEventCard(event) {
     <img src="assets/icons/calendar.svg" alt="" />
     ${formatDate(event.date)}
   </p>
+  <div class = "info">
   <p class="event-card__info">
     <img src="assets/icons/check.svg" alt="" />
     ${event.attendees} going
   </p>
+  <p class="event-card__info">
+    <img src="assets/icons/ticket.svg" alt="" />
+    Free
+  </p></div>
+  
   `;
+  if (!event.attendees) {
+    card.innerHTML = `
+    <img class="event-card__image" src="${event.image}" alt="${event.title}" />
+    <img class="event-card__online" src="assets/icons/Online_Event.png" alt="${
+      event.title
+    }" />
+  <h3 class="event-card__title">${event.title}</h3>
+  <p class="event-card__category">${categoryText(event)}</p>
+  <p class="event-card__info">
+    <img src="assets/icons/calendar.svg" alt="" />
+    ${formatDate(event.date)}
+    
+  </p>
+  <p class="event-card__info">
+    <img src="assets/icons/ticket.svg" alt="" />
+    Free
+  </p>
+  
+  `;
+  }
   return card;
 }
 
@@ -85,18 +111,10 @@ eventsStore.forEach((event) => {
   upcommingList.append(createEventCard(event));
 });
 
-//открываем основной сайт при нажатии на лого
-const logoBtn = document.getElementById('logo');
-logoBtn.addEventListener('click', () => {
-  window.open('index.html');
-  window.close('filterPage.html');
-});
-
 //открываем вторую страницу при нажатии на кнопку
 const joinBtn = document.getElementById('join');
 joinBtn.addEventListener('click', () => {
-  window.open('filterPage.html');
-  window.close('index.html');
+  window.location.href = 'filterPage.html';
 });
 
 const boxes = document.querySelector('.boxes');
