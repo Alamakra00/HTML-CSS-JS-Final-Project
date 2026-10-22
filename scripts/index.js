@@ -238,3 +238,8 @@ export const frndShipPosts = [
     btn: `<button class = "altBtn">Read more</button>`,
   },
 ];
+
+export const CITY = 'New York, NY';
+// Карта OpenStreetMap
+export const MAP_URL =
+  'https://www.openstreetmap.org/export/embed.html?bbox=-74.03,40.69,-73.93,40.79&layer=mapnik';
