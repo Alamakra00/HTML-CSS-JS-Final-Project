@@ -890,13 +890,13 @@ main > h2 {
     align-items: center;
     padding: 24px 16px;
     border-radius: 0;
-    text-align: center;
   }
   .joinBox .boxLeft {
     display: contents;
   }
   .joinBox h2 {
     order: 1;
+    align-self: flex-start;
   }
   .joinBox > img {
     order: 2;
@@ -907,12 +907,14 @@ main > h2 {
   }
   .joinBox p {
     order: 3;
+    align-self: stretch;
     margin: 12px 0 16px;
     font-size: 12px;
   }
   .joinBox .signInBtn {
     order: 4;
-    width: 100%;
+    width: 192px;
+    height: 40px;
   }
   .categories {
     margin-top: 40px;

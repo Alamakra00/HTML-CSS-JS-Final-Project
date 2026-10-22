@@ -977,7 +977,6 @@ main > h2 {
     align-items: center;
     padding: 24px 16px;
     border-radius: 0;
-    text-align: center;
 
     .boxLeft {
       display: contents;
@@ -985,6 +984,7 @@ main > h2 {
 
     h2 {
       order: 1;
+      align-self: flex-start;
     }
 
     > img {
@@ -997,13 +997,15 @@ main > h2 {
 
     p {
       order: 3;
+      align-self: stretch;
       margin: 12px 0 16px;
       font-size: 12px;
     }
 
     .signInBtn {
       order: 4;
-      width: 100%;
+      width: 192px;
+      height: 40px;
     }
   }
 
